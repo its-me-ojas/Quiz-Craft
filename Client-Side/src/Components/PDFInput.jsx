@@ -14,15 +14,18 @@ const PDFInput = () => {
 
         fetch('http://localhost:3001/upload', {
             method: 'POST',
+            mode:'cors',
             body: formData,
         })
             .then((response) => response.json())
             .then((data) => {
                 console.log('Success:', data);
+                alert('PDF submitted')
                 // Handle the response from the server as needed
             })
             .catch((error) => {
                 console.error('Error:', error);
+                alert('There was an error while submitting the pdf')
             });
     };
 
